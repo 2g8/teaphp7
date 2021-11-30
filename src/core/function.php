@@ -82,6 +82,9 @@ function getip() {
 	if(isset($_SERVER["HTTP_X_REAL_IP"])){
 		$ip = $_SERVER["HTTP_X_REAL_IP"];
 	}
+	if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])) {
+        $ip = $_SERVER["HTTP_CF_CONNECTING_IP"];
+    }
 	return $ip;
 }
 //是否为IE浏览器
